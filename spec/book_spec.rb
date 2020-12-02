@@ -13,7 +13,7 @@ describe Book do
       expect(books[1]['title']).to eq('Das große GU-Kochbuch Kochen für Kinder')
     end
 
-    it 'parses list of authors' do
+    it 'parses authors as list' do
       expect(books[1]['authors']).to eq(['null-ferdinand@echocat.org', 'null-lieblich@echocat.org'])
     end
   end
