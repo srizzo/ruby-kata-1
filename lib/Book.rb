@@ -2,6 +2,7 @@
 
 require 'active_model'
 require 'csv'
+require 'author'
 
 class Book
   include ActiveModel::Model
@@ -17,5 +18,9 @@ class Book
          .map { |record| record.update('authors' => record['authors'].split(',').map { |email| Author.find(email) }) }
          .map { |record| Book.new(record) }
     end
+  end
+
+  def to_s
+    "Book: #{title}, #{isbn}, #{authors}, #{description}"
   end
 end

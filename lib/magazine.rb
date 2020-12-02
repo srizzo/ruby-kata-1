@@ -2,6 +2,7 @@
 
 require 'csv'
 require 'active_model'
+require 'author'
 
 class Magazine
   include ActiveModel::Model
@@ -22,5 +23,9 @@ class Magazine
       end
          .map { |record| Magazine.new(record) }
     end
+  end
+
+  def to_s
+    "Magazine: #{title}, #{isbn}, #{authors}, #{published_at}"
   end
 end

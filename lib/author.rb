@@ -22,4 +22,8 @@ class Author
       new(email: email)
     end
   end
+
+  def to_s
+    "Author: #{email}, #{first_name}, #{last_name}"
+  end
 end
