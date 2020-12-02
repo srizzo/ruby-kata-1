@@ -10,11 +10,11 @@ describe Book do
     end
 
     it 'interprets correct encoding' do
-      expect(books[1]['title']).to eq('Das große GU-Kochbuch Kochen für Kinder')
+      expect(books[1].title).to eq('Das große GU-Kochbuch Kochen für Kinder')
     end
 
     it 'parses authors as list' do
-      expect(books[1]['authors']).to eq(['null-ferdinand@echocat.org', 'null-lieblich@echocat.org'])
+      expect(books[1].authors.map(&:email)).to eq(['null-ferdinand@echocat.org', 'null-lieblich@echocat.org'])
     end
   end
 end

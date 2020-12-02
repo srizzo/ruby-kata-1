@@ -10,11 +10,11 @@ describe Magazine do
     end
 
     it 'parses published_at as date' do
-      expect(magazines[0]['published_at']).to eq(Date.parse('2011-05-21'))
+      expect(magazines[0].published_at).to eq(Date.parse('2011-05-21'))
     end
 
     it 'parses authors as list' do
-      expect(magazines[2]['authors']).to eq(['null-lieblich@echocat.org', 'null-walter@echocat.org'])
+      expect(magazines[2].authors.map(&:email)).to eq(['null-lieblich@echocat.org', 'null-walter@echocat.org'])
     end
   end
 end
