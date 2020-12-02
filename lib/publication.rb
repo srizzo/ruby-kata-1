@@ -17,5 +17,9 @@ class Publication
     def find_by_isbn(isbn)
       all.find { |publication| publication.isbn == isbn }
     end
+
+    def find_all_by_author(author_email)
+      all.select { |publication| publication.authors.any? { |author| author.email == author_email } }
+    end
   end
 end
