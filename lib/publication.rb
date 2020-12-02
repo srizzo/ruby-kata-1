@@ -13,5 +13,9 @@ class Publication
     def all
       self.records ||= [*Book.read_from_csv(path: File.expand_path('../data/books.csv', File.dirname(__FILE__))), *Magazine.read_from_csv(path: File.expand_path('../data/magazines.csv', File.dirname(__FILE__)))]
     end
+
+    def find_by_isbn(isbn)
+      all.find { |publication| publication.isbn == isbn }
+    end
   end
 end
