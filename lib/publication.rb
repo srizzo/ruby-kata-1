@@ -21,5 +21,9 @@ class Publication
     def find_all_by_author(author_email)
       all.select { |publication| publication.authors.any? { |author| author.email == author_email } }
     end
+
+    def sorted_by_title
+      all.sort_by(&:title)
+    end
   end
 end

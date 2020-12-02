@@ -12,7 +12,6 @@ module Echocat
       puts publication
     end
 
-
     puts
     puts
     puts '#####################################################################'
@@ -30,5 +29,15 @@ module Echocat
 
     puts Publication.find_all_by_author('null-ferdinand@echocat.org')
     puts Publication.find_all_by_author('null-walter@echocat.org')
+
+    puts
+    puts
+    puts '#####################################################################'
+    puts 'Print out all books and magazines with all their details sorted by `title`:'
+    puts
+
+    Publication.sorted_by_title.each do |publication|
+      puts publication
+    end
   end
 end
